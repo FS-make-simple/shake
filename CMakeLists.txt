@@ -41,8 +41,20 @@ IF (NOT HELP2MAN_LOCATION)
 ENDIF ()
 
 #### Targets ####
-add_executable (shake executive.c judge.c linux.c main.c msg.c signals.c)
-add_executable (unattr executive.c linux.c signals.c unattr.c)
+add_executable (shake 
+                src/executive.c
+                src/judge.c
+                src/linux.c
+                src/msg.c
+                src/signals.c
+                src/main.c
+)
+add_executable (unattr
+                src/executive.c
+                src/linux.c
+                src/signals.c
+                src/unattr.c
+)
 add_help2man_manpage (shake.8 shake)
 add_help2man_manpage (unattr.8 unattr)
 add_custom_target (doc ALL
